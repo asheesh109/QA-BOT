@@ -42,7 +42,7 @@ class WhisperTranscriber:
             self.is_loading = True
             # Update status while loading
             if hasattr(self, 'status_callback') and self.status_callback:
-                self.status_callback("Loading Whisper model... Please wait.")
+                self.status_callback("Loading model... Please wait.")
             self.model = whisper.load_model("medium")
             self.is_loading = False
             # Update status after loading
@@ -352,7 +352,7 @@ def analyze_audio():
     root.after(100, update_ui)
 
 def update_sentiment_graph(customer_scores, bot_scores):
-    """Update the sentiment graph with customer and bot scores."""
+    """Update the tone & pitch graph with customer and bot scores."""
     ax.clear()
 
     # Extract message indices and scores
@@ -559,7 +559,7 @@ def create_gui():
     middle_frame = ttk.Frame(paned_window)
     paned_window.add(middle_frame, weight=1)
     
-    sentiment_frame = ttk.LabelFrame(middle_frame, text="Conversation with Sentiment Analysis")
+    sentiment_frame = ttk.LabelFrame(middle_frame, text="Conversation with pitch & Tone Analysis")
     sentiment_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
     
     sentiment_text = scrolledtext.ScrolledText(
@@ -586,7 +586,7 @@ def create_gui():
     right_frame = ttk.Frame(paned_window)
     paned_window.add(right_frame, weight=1)
     
-    graph_frame = ttk.LabelFrame(right_frame, text="Sentiment Visualization")
+    graph_frame = ttk.LabelFrame(right_frame, text="Pitch & Tone Visualization")
     graph_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
     
     # Create matplotlib figure and canvas with custom styling
@@ -606,9 +606,9 @@ def create_gui():
         spine.set_edgecolor(colors['text_light'])
     
     # Initial plot setup
-    ax.set_title("Conversation Sentiment", fontsize=14, fontweight='bold')
+    ax.set_title("Conversation Pitch & Tone", fontsize=14, fontweight='bold')
     ax.set_xlabel("Message Number", fontsize=12, fontweight='bold')
-    ax.set_ylabel("Sentiment Score", fontsize=12, fontweight='bold')
+    ax.set_ylabel("Pitch & Tone Score", fontsize=12, fontweight='bold')
     ax.grid(True, linestyle='--', alpha=0.3, color=colors['text_light'])
     ax.set_ylim(-1.1, 1.1)
     
