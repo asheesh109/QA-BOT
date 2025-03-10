@@ -4,7 +4,8 @@ A real-time voice agent evaluation system built for HackSpirit 6.0
 Overview
 QA-BOT is a hackathon project developed for HackSpirit 6.0, a 24-hour hackathon. The bot analyzes and evaluates the real-time performance of voice agents by processing their interactions, identifying key metrics (such as accuracy, sentiment, and responsiveness), and providing actionable insights to enhance customer service quality.
 
-This project leverages Python Whisper and various Python libraries to achieve accurate and efficient real-time analysis.
+This project leverages Python Whisper and various Python libraries to achieve accurate and efficient real-time analysis. we are unable to complete all the features requried 
+in problem statement and we have to train the model more to get precise output.
 
 Problem Statement
 Description
@@ -40,6 +41,8 @@ Provides actionable insights and detailed reports.
 Setup & Installation
 Prerequisites
 Make sure you have Python 3.8+ installed. Then install the required dependencies:
+
+![QA-BOT UI](https://raw.githubusercontent.com/asheesh109/QA-BOT/main/chatbot_img.jpg) 
 
 Future Enhancements 🚀
 Integration with AI-powered chatbots
